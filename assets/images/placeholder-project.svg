@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="150" viewBox="0 0 240 150">
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#eef2f8"/>
+      <stop offset="1" stop-color="#dfe8f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="240" height="150" rx="12" ry="12" fill="url(#g)" stroke="#c7d9f3" />
+  <g transform="translate(0,0)" fill="#7b8aa6">
+    <rect x="36" y="36" width="56" height="40" rx="6" fill="#ffffff" opacity="0.08" />
+    <path d="M120 38c-12 0-22 10-22 22s10 22 22 22 22-10 22-22-10-22-22-22zm0 6a16 16 0 1 1 0 32 16 16 0 0 1 0-32z" fill="#7b8aa6" opacity="0.9"/>
+  </g>
+  <text x="50%" y="86%" font-family="Inter, Arial, sans-serif" font-size="14" fill="#31507a" text-anchor="middle">Project placeholder</text>
+</svg>

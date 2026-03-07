@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title id="page-title">Armin Herling | Portfolio</title>
+    <meta
+      id="meta-description"
+      name="description"
+      content="Single-page portfolio with projects, skills, and contact details."
+    />
+
+    <!-- Open Graph / Discord preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Armin Herling | Portfolio" />
+    <meta property="og:description" content="Software developer specializing in C++, C#, compilers, and desktop applications. Check out my projects and skills." />
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/32704397?v=4" />
+    <meta property="og:image:width" content="460" />
+    <meta property="og:image:height" content="460" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Armin Herling | Portfolio" />
+    <meta name="twitter:description" content="Software developer specializing in C++, C#, compilers, and desktop applications. Check out my projects and skills." />
+    <meta name="twitter:image" content="https://avatars.githubusercontent.com/u/32704397?v=4" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="page-layout">
+      <aside
+        class="sidebar"
+        aria-label="Primary navigation"
+        data-i18n-aria-label="nav.primaryAria"
+      >
+        <div class="sidebar-header">
+          <div class="brand">
+            <h1>Armin Herling</h1>
+            <p data-i18n="brand.role">Software Developer</p>
+          </div>
+
+          <div class="sidebar-controls">
+            <div
+              class="lang-switch"
+              role="group"
+              aria-label="Language switcher"
+              data-i18n-aria-label="lang.groupAria"
+            >
+              <button class="lang-btn active" type="button" data-lang="en" aria-label="English">
+                <img class="lang-flag" src="../assets/flags/us.svg" alt="" aria-hidden="true" />
+                <span class="lang-code">EN</span>
+              </button>
+              <button class="lang-btn" type="button" data-lang="de" aria-label="Deutsch">
+                <img class="lang-flag" src="../assets/flags/de.svg" alt="" aria-hidden="true" />
+                <span class="lang-code">DE</span>
+              </button>
+            </div>
+
+            <button
+              class="nav-toggle"
+              type="button"
+              aria-label="Toggle navigation menu"
+              data-i18n-aria-label="nav.toggleAria"
+              aria-controls="primary-nav"
+              aria-expanded="false"
+              data-i18n="nav.menu"
+            >
+              Menu
+            </button>
+          </div>
+        </div>
+
+        <div class="profile-photo-wrap" aria-hidden="true">
+          <img
+            class="profile-photo"
+            src="https://avatars.githubusercontent.com/u/32704397?v=4"
+            alt=""
+          />
+        </div>
+
+        <section class="sidebar-contact" aria-label="Contact links">
+          <a class="contact-icon-link" href="mailto:arminherling@gmail.com" aria-label="Email">
+            <img class="contact-icon" src="../assets/icons/email.svg" alt="" aria-hidden="true" />
+          </a>
+          <a
+            class="contact-icon-link"
+            href="https://github.com/arminherling"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <img class="contact-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+          </a>
+          <a
+            class="contact-icon-link"
+            href="https://www.linkedin.com/in/armin-herling/"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <img class="contact-icon" src="../assets/icons/linkedin.svg" alt="" aria-hidden="true" />
+          </a>
+        </section>
+
+        <nav class="nav-links" id="primary-nav">
+          <a href="#about" class="nav-link active" data-i18n="nav.about">About</a>
+          <a href="#skills" class="nav-link" data-i18n="nav.skills">Skills</a>
+          <a href="#experience" class="nav-link" data-i18n="nav.experience">Experience</a>
+          <a href="#projects" class="nav-link" data-i18n="nav.projects">Projects</a>
+          <a href="#contact" class="nav-link" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <section id="about" class="section">
+          <h2><a class="section-anchor" href="#about" data-i18n="about.title" aria-label="Permalink to About">About</a></h2>
+          <div class="about-profile-photo-wrap" aria-hidden="true">
+            <img
+              class="about-profile-photo"
+              src="https://avatars.githubusercontent.com/u/32704397?v=4"
+              alt=""
+            />
+          </div>
+          <p data-i18n="about.p1">
+            C++ software engineer specializing in compilers, native desktop
+            applications, and build systems. I design and ship high-performance
+            native tools and maintain open-source projects such as Caracal and
+            CaraTest. My work emphasizes correctness, performance, and
+            maintainability through clean APIs and robust testing.
+          </p>
+          <p data-i18n="about.p2">
+            At Treesoft since 2017, I advanced from apprentice to C++ developer.
+            I lead end-to-end C++/Qt development, migrated codebases to CMake,
+            and built internal tooling that measurably improved engineering
+            productivity. I take responsibility for architecture, implementation,
+            and long-term maintenance of core components.
+          </p>
+        </section>
+
+        <section id="skills" class="section">
+          <h2><a class="section-anchor" href="#skills" data-i18n="skills.title" aria-label="Permalink to Skills">Skills</a></h2>
+          <ul class="chip-list">
+            <li>C++</li>
+            <li>C#</li>
+            <li>Git</li>
+            <li>SQL</li>
+            <li>CMake</li>
+            <li>Qt</li>
+            <li>LLVM</li>
+            <li data-i18n="skills.compilers">Compilers</li>
+            <li data-i18n="skills.databases">Databases</li>
+            <li>CI/CD</li>
+            <li>UI</li>
+            <li>UX</li>
+            <li data-i18n="skills.german">German</li>
+            <li data-i18n="skills.english">English</li>
+          </ul>
+        </section>
+
+        <section id="experience" class="section">
+          <h2><a class="section-anchor" href="#experience" data-i18n="experience.title" aria-label="Permalink to Experience">Experience</a></h2>
+          <div class="card">
+            <h3 data-i18n="experience.role1">Software Developer C++ · Treesoft GmbH & Co. KG</h3>
+            <p class="meta" data-i18n="experience.time1">Since 01.08.2020</p>
+            <p data-i18n="experience.desc1">
+              Development and maintenance of C++ applications; migrated projects
+              to modern build systems (CMake); performance optimizations and
+              close collaboration with QA and product owners.
+            </p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="experience.role2">Apprentice, IT Specialist for Application Development · Treesoft GmbH & Co. KG</h3>
+            <p class="meta" data-i18n="experience.time2">Since 01.08.2017</p>
+            <p data-i18n="experience.desc2">
+              Apprenticeship focused on software development (C++/Qt); contributed
+              to customer projects, internal tooling, testing, and documentation.
+            </p>
+          </div>
+          <div class="card">
+            <h3 data-i18n="experience.role3">Abitur, Rahel‑Varnhagen‑Kolleg Hagen (Evening School)</h3>
+            <p class="meta" data-i18n="experience.time3">2014 - 2016</p>
+            <p data-i18n="experience.desc3">Completed Abitur at Rahel‑Varnhagen‑Kolleg Hagen (evening school), external branch in Lüdenscheid, 2014 - 2016. Graduated with an overall grade of 2.3 and advanced courses in Mathematics and Biology. Coursework emphasized analytical problem-solving, independent study, and time management, demonstrating discipline and strong academic ability.</p>
+          </div>
+        </section>
+
+        <section id="projects" class="section">
+          <h2><a class="section-anchor" href="#projects" data-i18n="projects.title" aria-label="Permalink to Projects">Projects</a></h2>
+          <div class="project-grid">
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name1">Caracal Programming Language</h3>
+                <div class="project-links">
+                  <a
+                    class="project-github-link"
+                    href="https://github.com/arminherling/Caracal"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Caracal on GitHub"
+                  >
+                    <img class="project-github-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+                  </a>
+                  <a
+                    class="project-site-link"
+                    href="https://caracal-lang.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Open Caracal website"
+                  >
+                    <img class="project-site-icon" src="../assets/icons/globe.svg" alt="" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>CMake</li>
+                <li>CI/CD</li>
+                <li>Testing</li>
+                <li>Compiler</li>
+                <li data-i18n="skills.typeSystems">Type Systems</li>
+                <li data-i18n="skills.codeGeneration">Code Generation</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/caracal-logo.png"
+                data-preview-alt="Caracal logo"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/caracal-logo.png"
+                  alt="Caracal logo"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc1">
+                Caracal is a programming language I'm building from scratch.
+              </p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name2">CaraTest Test Framework</h3>
+                <a
+                  class="project-github-link"
+                  href="https://github.com/arminherling/CaraTest"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open CaraTest on GitHub"
+                >
+                  <img class="project-github-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>CMake</li>
+                <li>CI/CD</li>
+                <li>Qt</li>
+                <li>Testing</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="CaraTest preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="CaraTest preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc2">
+                CaraTest is a lightweight test framework for C++.
+              </p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name3">Umstellung auf CMake</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>CMake</li>
+                <li>Build Systems</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/cmake.png"
+                data-preview-alt="CMake build system migration"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/cmake.png"
+                  alt="CMake build system migration"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc3"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name4">Email Mehrfachversand</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>Mailing</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Email bulk sending preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Email bulk sending preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc4"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name5">Automatische Forecastliste</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>CRM</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Forecast list preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Forecast list preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc5"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name6">Ermittlung von Servicekosten</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>Cost Analysis</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Service costs calculation preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Service costs calculation preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc6"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name7">Syntax Highlighter</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Textmate</li>
+                <li data-i18n="skills.compilers">Compilers</li>
+                <li>Parsing</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Syntax highlighter preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Syntax highlighter preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc7"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name8">SQL Builder</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>SQL</li>
+                <li data-i18n="skills.codeGeneration">Code Generation</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="SQL Builder preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="SQL Builder preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc8"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name9">C++ Code Generator</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li data-i18n="skills.codeGeneration">Code Generation</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="C++ Code Generator preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="C++ Code Generator preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc9"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name10">SQL Statistiken</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>SQL</li>
+                <li data-i18n="skills.databases">Databases</li>
+                <li>Performance</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="SQL statistics preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="SQL statistics preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc10"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name11">Abschlussproject Vier-Augen-Prinzip</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>UI</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Vier-Augen-Prinzip preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Vier-Augen-Prinzip preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc11"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name12">TEFB-Editor</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>UI</li>
+                <li>E-Mail</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="TEFB document editor preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="TEFB document editor preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc12"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name13">Adressliste</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>CRM</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Address list preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Address list preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc13"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3 data-i18n="projects.name14">Geodaten-Tool</h3>
+              </div>
+              <ul class="project-skill-list">
+                <li>C++</li>
+                <li>Qt</li>
+                <li>SQL</li>
+                <li>Geodata</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Geodata preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Geodata preview"
+                  loading="lazy"
+                />
+              </button>
+              <p data-i18n="projects.desc14"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3>GRF</h3>
+                <a
+                  class="project-github-link"
+                  href="https://github.com/arminherling/GRF"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open GRF on GitHub"
+                >
+                  <img class="project-github-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+              <ul class="project-skill-list">
+                <li>C#</li>
+                <li>.NET</li>
+                <li>File Formats</li>
+                <li>NuGet</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="GRF preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="GRF preview"
+                  loading="lazy"
+                />
+              </button>
+
+              <p data-i18n="projects.desc15"></p>
+            </article>
+            <article class="card project-card">
+              <div class="project-title-row">
+                <h3>Ragnarok Online Item Viewer</h3>
+                <a
+                  class="project-github-link"
+                  href="https://github.com/arminherling/Ragnarok-Online-Item-Viewer"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Open Ragnarok Online Item Viewer on GitHub"
+                >
+                  <img class="project-github-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+                </a>
+              </div>
+              <ul class="project-skill-list">
+                <li>C#</li>
+                <li>WPF</li>
+                <li>MVVM</li>
+              </ul>
+              <button
+                class="project-preview-btn"
+                type="button"
+                data-preview-src="../assets/images/placeholder-project.svg"
+                data-preview-alt="Ragnarok Online Item Viewer preview"
+                aria-label="Open larger project preview"
+              >
+                <img
+                  class="project-image"
+                  src="../assets/images/placeholder-project.svg"
+                  alt="Ragnarok Online Item Viewer preview"
+                  loading="lazy"
+                />
+              </button>
+
+              <p data-i18n="projects.desc16"></p>
+            </article>
+          </div>
+        </section>
+
+        <section id="contact" class="section">
+          <h2><a class="section-anchor" href="#contact" data-i18n="contact.title" aria-label="Permalink to Contact">Contact</a></h2>
+          <p class="contact-intro" data-i18n="contact.intro">Feel free to reach out via:</p>
+          <ul class="contact-list">
+            <li>
+              <img class="contact-list-icon" src="../assets/icons/email.svg" alt="" aria-hidden="true" />
+              <strong data-i18n="contact.emailLabel">E-mail:</strong>
+              <a href="mailto:arminherling@gmail.com">arminherling@gmail.com</a>
+            </li>
+            <li>
+              <img class="contact-list-icon" src="../assets/icons/github.svg" alt="" aria-hidden="true" />
+              <strong data-i18n="contact.githubLabel">GitHub:</strong>
+              <a href="https://github.com/arminherling" target="_blank" rel="noreferrer">github.com/arminherling</a>
+            </li>
+            <li>
+              <img class="contact-list-icon" src="../assets/icons/linkedin.svg" alt="" aria-hidden="true" />
+              <strong data-i18n="contact.linkedinLabel">LinkedIn:</strong>
+              <a href="https://www.linkedin.com/in/armin-herling/" target="_blank" rel="noreferrer">linkedin.com/in/armin-herling</a>
+            </li>
+          </ul>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="image-lightbox" id="project-lightbox" hidden aria-hidden="true">
+      <button class="image-lightbox-close" type="button" aria-label="Close image preview">×</button>
+      <img class="image-lightbox-image" src="" alt="" />
+    </div>
+
+    <script src="../translations.js"></script>
+    <script src="../script.js"></script>
+  </body>
+</html>
