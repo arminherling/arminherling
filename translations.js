@@ -21,7 +21,7 @@ const translations = {
   },
   "brand.role": {
     en: "Software Developer",
-    de: "Fachinformatiker für Anwendungsentwicklung",
+    de: "Softwareentwickler",
   },
   "nav.menu": {
     en: "Menu",
