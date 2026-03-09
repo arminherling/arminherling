@@ -51,6 +51,10 @@ const translations = {
     en: "About",
     de: "Über mich",
   },
+  "experience.title": {
+    en: "Experience",
+    de: "Erfahrung",
+  },
   "about.p1": {
     en: "C++ software engineer specializing in compilers, native desktop applications, and build systems. I design and ship high-performance native tools and maintain open-source projects such as Caracal and CaraTest. My work emphasizes correctness, performance, and maintainability through clean APIs and robust testing.",
     de: "C++-Softwareentwickler mit Schwerpunkt Compiler, native Desktop-Anwendungen und Build-Systeme. Ich entwickle und liefere leistungsfähige native Werkzeuge und betreue Open-Source-Projekte wie Caracal und CaraTest. Meine Arbeit legt Wert auf Korrektheit, Performance und Wartbarkeit durch klare APIs und robuste Tests.",
