@@ -104,7 +104,7 @@ const translations = {
     de: "2014 - 2016",
   },
   "experience.desc3": {
-    en: "Completed Abitur at Rahel-Varnhagen-Kolleg Hagen (evening school), external branch in Lüdenscheid. Graduated with an overall grade of 2.3 and advanced courses in Mathematics and Biology.",
+    en: "Completed Abitur at Rahel-Varnhagen-Kolleg Hagen (evening school), external branch in Lüdenscheid. Graduated with an overall grade of 2.3 (1 means very good, 6 means insufficient in Germany) and advanced courses in Mathematics and Biology.",
     de: "Abschluss am Rahel-Varnhagen-Kolleg Hagen (Abendschule), Außenstelle Lüdenscheid. Abitur mit einem Notendurchschnitt von 2,3; Leistungskurse Mathematik und Biologie.",
   },
   "projects.title": {
@@ -180,8 +180,8 @@ const translations = {
     de: "C++ Code Generator",
   },
   "projects.desc9": {
-    en: "A code generation tool that produces C++ boilerplate from declarative definitions. Eliminates repetitive manual work and ensures generated code stays consistent and in sync with its source definitions.",
-    de: "Ein Codegenerierungstool, das C++-Boilerplate aus deklarativen Definitionen erzeugt. Eliminiert repetitive Handarbeit und stellt sicher, dass generierter Code konsistent bleibt und mit seinen Quelldefinitionen synchron ist.",
+    en: "A code generation tool that produces C++ boilerplate from declarative definitions. Eliminates repetitive manual work and ensures generated code stays consistent and in sync with its source definitions. It also includes a dialog designer that allows developers to visually design dialogs and generates the corresponding C++ code, including layout and event handling.",
+    de: "Ein Codegenerierungstool, das C++-Boilerplate aus deklarativen Definitionen erzeugt. Eliminiert repetitive Handarbeit und stellt sicher, dass generierter Code konsistent bleibt und mit seinen Quelldefinitionen synchron ist. Es enthält auch einen Dialogdesigner, der es den Entwicklern ermöglicht, Dialoge visuell zu gestalten und den entsprechenden C++-Code zu generieren, einschließlich Layout und Ereignisbehandlung.",
   },
   "projects.name10": {
     en: "Optimizing SQL Statistics",

@@ -335,13 +335,21 @@ h3 {
   border: 0;
   background: transparent;
   padding: 0;
+  display: inline-block;
+  line-height: 0;
   float: left;
   margin: 0.1rem 0.9rem 0.55rem 0;
+  vertical-align: top;
+  width: fit-content;
+  -webkit-width: fit-content;
+  overflow: hidden;
   cursor: pointer;
 }
 
 .project-image {
-  width: min(100%, 240px);
+  width: auto;
+  max-width: 240px;
+  height: auto;
   max-height: 150px;
   object-fit: cover;
   border-radius: 10px;
