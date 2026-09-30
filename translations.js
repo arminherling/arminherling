@@ -15,9 +15,9 @@ const translations = {
     en: "Toggle navigation menu",
     de: "Navigationsmenü umschalten",
   },
-  "lang.groupAria": {
-    en: "Language switcher",
-    de: "Sprachauswahl",
+  "lang.toggleAria": {
+    en: "Switch to German",
+    de: "Zu Englisch wechseln",
   },
   "brand.role": {
     en: "Software Developer",

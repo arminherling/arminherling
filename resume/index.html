@@ -46,21 +46,21 @@
           </div>
 
           <div class="sidebar-controls">
-            <div
+            <button
               class="lang-switch"
-              role="group"
-              aria-label="Language switcher"
-              data-i18n-aria-label="lang.groupAria"
+              type="button"
+              aria-label="Switch to German"
+              data-i18n-aria-label="lang.toggleAria"
             >
-              <button class="lang-btn active" type="button" data-lang="en" aria-label="English">
-                <img class="lang-flag" src="../assets/flags/us.svg" alt="" aria-hidden="true" />
+              <span class="lang-btn active" data-lang="en" aria-hidden="true">
+                <img class="lang-flag" src="../assets/flags/us.svg" alt="" />
                 <span class="lang-code">EN</span>
-              </button>
-              <button class="lang-btn" type="button" data-lang="de" aria-label="Deutsch">
-                <img class="lang-flag" src="../assets/flags/de.svg" alt="" aria-hidden="true" />
+              </span>
+              <span class="lang-btn" data-lang="de" aria-hidden="true">
+                <img class="lang-flag" src="../assets/flags/de.svg" alt="" />
                 <span class="lang-code">DE</span>
-              </button>
-            </div>
+              </span>
+            </button>
 
             <button
               class="nav-toggle"

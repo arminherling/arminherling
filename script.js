@@ -2,6 +2,7 @@ const sections = document.querySelectorAll("main section[id]");
 const navLinks = document.querySelectorAll(".nav-link");
 const navToggle = document.querySelector(".nav-toggle");
 const navContainer = document.querySelector(".nav-links");
+const langSwitch = document.querySelector(".lang-switch");
 const langButtons = document.querySelectorAll(".lang-btn");
 const i18nElements = document.querySelectorAll("[data-i18n]");
 const i18nAriaElements = document.querySelectorAll("[data-i18n-aria-label]");
@@ -16,7 +17,6 @@ const updateLanguageButtonState = (lang) => {
   langButtons.forEach((button) => {
     const isActive = button.dataset.lang === lang;
     button.classList.toggle("active", isActive);
-    button.setAttribute("aria-pressed", String(isActive));
   });
 };
 
@@ -87,6 +87,12 @@ const updateActiveSection = () => {
     }
   });
 
+  // the last section is too short to reach the offset, it is active once its heading is in view
+  const lastSection = sections[sections.length - 1];
+  if (lastSection.getBoundingClientRect().top <= window.innerHeight * 0.85) {
+    activeId = lastSection.id;
+  }
+
   activateLink(activeId);
 };
 
@@ -115,12 +121,14 @@ if (navToggle && navContainer) {
   });
 }
 
-if (langButtons.length > 0) {
-  langButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const selectedLang = button.dataset.lang || "en";
-      setLanguage(selectedLang);
-    });
+// one switch, each click changes to the other language
+if (langSwitch) {
+  langSwitch.addEventListener("click", () => {
+    let nextLang = "de";
+    if (document.documentElement.lang === "de") {
+      nextLang = "en";
+    }
+    setLanguage(nextLang);
   });
 
   const savedLang = localStorage.getItem("portfolio-lang");

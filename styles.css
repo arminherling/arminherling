@@ -1,13 +1,34 @@
 :root {
-  --blue-50: #f3f7ff;
-  --blue-100: #e7efff;
-  --blue-200: #d4e2ff;
-  --blue-300: #b5cbfa;
-  --blue-500: #5f86d6;
-  --blue-700: #264a8a;
-  --text-main: #14243a;
-  --text-muted: #4a5f7d;
-  --white: #ffffff;
+  /* midnight highway */
+  --bg: #07070d;
+  --bg-raised: #11111c;
+  --bg-inset: #0b0b14;
+
+  /* lines */
+  --border: #2a2a3f;
+
+  /* text */
+  --text-main: #f5f7fa;
+  --text-muted: #aab1c4;
+  --text-heading: #ffffff;
+
+  /* racing colors */
+  --purple: #8b1fff;
+  --green: #00e676;
+  --blue: #1ec8ff;
+  --hover: var(--green);
+  --on-bright: #07070d;
+  --racing-stripe: linear-gradient(90deg, var(--purple) 0%, var(--purple) 55%, var(--green) 55%, var(--green) 100%);
+  --chrome: linear-gradient(180deg, #ffffff 0%, #dfe7f1 42%, #7d8ba0 50%, #c9d4e2 62%, #ffffff 100%);
+
+  --glow-hover: 0 0 0 2px var(--hover), 0 0 24px rgba(0, 230, 118, 0.5);
+  --glow-purple: 0 0 10px rgba(139, 31, 255, 0.7), 0 0 28px rgba(139, 31, 255, 0.4);
+  --glow-green: 0 0 8px rgba(0, 230, 118, 0.55), 0 0 20px rgba(0, 230, 118, 0.25);
+  --glow-card: 0 0 0 1px rgba(139, 31, 255, 0.25), 0 0 22px rgba(139, 31, 255, 0.22);
+  --heading-font: "Arial Black", "Segoe UI Black", "Helvetica Neue", Impact, sans-serif;
+
+  /* the icons are black images, turned white */
+  --icon-light: invert(100%);
 }
 
 * {
@@ -19,10 +40,30 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color: var(--text-main);
-  background: linear-gradient(180deg, var(--blue-50), var(--blue-100));
+  background-color: var(--bg);
+  background-image: radial-gradient(ellipse at 85% 0%, rgba(139, 31, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse at 100% 100%, rgba(30, 200, 255, 0.14), transparent 50%);
+  background-attachment: fixed;
+}
+
+/* speed lines streaking across the page */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: repeating-linear-gradient(
+      -24deg,
+      transparent 0 46px,
+      rgba(255, 255, 255, 0.035) 46px 48px,
+      transparent 48px 130px,
+      rgba(139, 31, 255, 0.07) 130px 133px
+    );
+  pointer-events: none;
 }
 
 .page-layout {
@@ -31,14 +72,17 @@ body {
   grid-template-columns: 280px 1fr;
 }
 
+/* a purple and green racing stripe down the edge */
 .sidebar {
   position: sticky;
   top: 0;
   align-self: start;
   height: 100vh;
   padding: 2rem 1.5rem;
-  background: var(--blue-200);
-  border-right: 1px solid var(--blue-300);
+  background: var(--bg-raised);
+  border-right: 6px solid;
+  border-image: linear-gradient(180deg, var(--purple) 0 60%, var(--green) 60% 100%) 1;
+  box-shadow: 6px 0 26px rgba(139, 31, 255, 0.35);
 }
 
 .sidebar-header {
@@ -55,24 +99,51 @@ body {
   gap: 0.55rem;
 }
 
+/* chrome lettering with a purple shadow */
 .brand h1 {
   margin: 0;
-  font-size: 1.6rem;
+  padding-right: 0.15em;
+  font-family: var(--heading-font);
+  font-size: 1.55rem;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  background: var(--chrome);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(3px 3px 0 var(--purple)) drop-shadow(0 0 12px rgba(139, 31, 255, 0.85));
 }
 
+/* the role as a slanted green tag */
 .brand p {
-  margin: 0.5rem 0 0;
-  color: var(--text-muted);
+  display: inline-block;
+  margin: 0.7rem 0 0;
+  padding: 0.15rem 0.6rem;
+  background: var(--green);
+  color: var(--on-bright);
+  font-size: 0.72rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transform: skewX(-12deg);
 }
 
 .nav-toggle {
   display: none;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
-  color: var(--blue-700);
-  border-radius: 10px;
-  padding: 0.45rem 0.75rem;
-  font-weight: 600;
+  border: 2px solid var(--purple);
+  background: transparent;
+  color: var(--text-main);
+  border-radius: 0;
+  padding: 0.4rem 0.75rem;
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transform: skewX(-12deg);
   cursor: pointer;
 }
 
@@ -82,10 +153,21 @@ body {
   top: 1rem;
   right: 1.2rem;
   z-index: 1100;
-  border: 1px solid var(--blue-300);
-  border-radius: 10px;
+  border: 2px solid var(--purple);
+  border-radius: 0;
   overflow: hidden;
-  background: var(--white);
+  background: var(--bg-raised);
+  transform: skewX(-12deg);
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: var(--glow-purple);
+  transition: box-shadow 0.15s;
+}
+
+.lang-switch:hover {
+  box-shadow: var(--glow-hover);
 }
 
 .lang-btn {
@@ -94,10 +176,11 @@ body {
   gap: 0.3rem;
   border: none;
   background: transparent;
-  color: var(--blue-700);
-  padding: 0.35rem 0.5rem;
+  color: var(--text-main);
+  padding: 0.35rem 0.55rem;
   font-size: 0.8rem;
-  font-weight: 700;
+  font-style: italic;
+  font-weight: 800;
   cursor: pointer;
 }
 
@@ -105,59 +188,66 @@ body {
   width: 1rem;
   height: 0.75rem;
   object-fit: cover;
-  border-radius: 2px;
-  border: 1px solid var(--blue-300);
+  border-radius: 0;
+  border: 1px solid var(--border);
   display: inline-block;
 }
 
 .lang-code {
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
 }
 
 .lang-btn.active {
-  background: var(--blue-300);
+  background: var(--purple);
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+/* a slanted cover frame with an offset green edge, like the cards */
+.profile-photo-wrap,
+.about-profile-photo-wrap {
+  width: 170px;
+  max-width: calc(100% - 1rem);
+  margin-left: 0.5rem;
+  border: 3px solid var(--purple);
+  box-shadow: 6px 6px 0 var(--green), 0 0 28px rgba(139, 31, 255, 0.55);
+  overflow: hidden;
+  line-height: 0;
+  transform: skewX(-6deg);
 }
 
 .profile-photo-wrap {
-  margin-top: 1.25rem;
+  margin-top: 1.4rem;
 }
 
 .about-profile-photo-wrap {
   display: none;
 }
 
-.about-profile-photo {
-  width: 100%;
-  max-width: 170px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--blue-300);
-  display: block;
-}
-
+/* upright again, at its full size, the slanted corners stay empty */
+.about-profile-photo,
 .profile-photo {
   width: 100%;
-  max-width: 170px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid var(--blue-300);
+  border-radius: 0;
   display: block;
+  transform: skewX(6deg);
 }
 
 .sidebar-contact {
-  margin-top: 1rem;
+  margin-top: 1.2rem;
   display: flex;
   align-items: center;
   gap: 0.7rem;
 }
 
 .contact-icon {
-  width: 1.45rem;
-  height: 1.45rem;
+  width: 1.3rem;
+  height: 1.3rem;
   display: inline-block;
   flex-shrink: 0;
+  filter: var(--icon-light);
 }
 
 .contact-icon-link {
@@ -166,34 +256,50 @@ body {
   justify-content: center;
   width: 2.3rem;
   height: 2.3rem;
-  border-radius: 999px;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: var(--bg-inset);
+  transform: skewX(-12deg);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .contact-icon-link:hover {
-  background: var(--blue-100);
+  border-color: var(--hover);
+  box-shadow: var(--glow-hover);
 }
 
 .nav-links {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
 .nav-link {
   text-decoration: none;
-  color: var(--blue-700);
-  font-weight: 500;
-  padding: 0.6rem 0.8rem;
-  border-radius: 10px;
-  transition: background-color 0.2s ease;
+  color: var(--text-muted);
+  font-style: italic;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 0.55rem 0.9rem;
+  border-left: 4px solid transparent;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: #ffffff;
+  border-left-color: var(--hover);
+}
+
+/* the current section as a slanted purple plate */
 .nav-link.active {
-  background: var(--white);
+  color: #ffffff;
+  background: var(--purple);
+  border-left-color: var(--green);
+  transform: skewX(-12deg);
+  box-shadow: var(--glow-purple);
 }
 
 .content {
@@ -203,16 +309,26 @@ body {
 
 .section {
   padding: 1rem 0 2rem;
-  border-bottom: 1px solid var(--blue-300);
+  border-bottom: 1px solid var(--border);
 }
 
 .section:last-child {
   border-bottom: none;
 }
 
+/* heavy italic with a purple offset and a racing stripe underneath */
 h2 {
+  display: inline-block;
   margin-top: 0;
-  color: var(--blue-700);
+  padding-bottom: 0.45rem;
+  font-family: var(--heading-font);
+  font-style: italic;
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-shadow: 3px 3px 0 var(--purple), 0 0 18px rgba(139, 31, 255, 0.75);
+  background: var(--racing-stripe) left bottom / 100% 5px no-repeat;
 }
 
 /* Make entire section heading clickable but only show underline and '#' on hover */
@@ -227,8 +343,9 @@ h2 {
   content: "#";
   opacity: 0;
   margin-left: 0.4rem;
-  color: var(--text-muted);
+  color: var(--green);
   font-weight: 600;
+  text-shadow: none;
   transition: opacity 120ms ease, transform 120ms ease;
   transform: translateY(-1px);
 }
@@ -244,18 +361,59 @@ h2 {
 
 h3 {
   margin: 0 0 0.75rem;
+  color: var(--text-heading);
+  font-style: italic;
+  font-weight: 800;
 }
 
 .card {
-  background: var(--white);
-  border: 1px solid var(--blue-300);
-  border-radius: 14px;
-  padding: 1rem;
+  position: relative;
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  border-radius: 0;
+  padding: 1rem 1rem 1rem 1.4rem;
   margin-bottom: 1rem;
+  overflow: hidden;
+  box-shadow: var(--glow-card);
+  transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+}
+
+/* a purple and green stripe down the left of each card */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 6px;
+  background: linear-gradient(180deg, var(--purple) 0 60%, var(--green) 60% 100%);
+}
+
+/* lifts with the hover glow */
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--hover);
+  box-shadow: var(--glow-hover);
+}
+
+/* cards slant less than the skill plates, the text inside stays upright */
+.card {
+  margin-inline: 0.8rem;
+  transform: skewX(-6deg);
+}
+
+.card > * {
+  transform: skewX(6deg);
+}
+
+.card:hover {
+  transform: skewX(-6deg) translateY(-4px);
 }
 
 .meta {
-  color: var(--text-muted);
+  color: var(--green);
+  font-style: italic;
+  font-weight: 600;
   margin: 0.2rem 0 0.6rem;
 }
 
@@ -287,20 +445,24 @@ h3 {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 999px;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: var(--bg-inset);
   flex-shrink: 0;
+  transform: skewX(-6deg);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .project-github-link:hover {
-  background: var(--blue-100);
+  border-color: var(--hover);
+  box-shadow: var(--glow-hover);
 }
 
 .project-github-icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.2rem;
+  height: 1.2rem;
   display: block;
+  filter: var(--icon-light);
 }
 
 .project-site-link {
@@ -309,26 +471,30 @@ h3 {
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border-radius: 999px;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
+  border-radius: 0;
+  border: 2px solid var(--border);
+  background: var(--bg-inset);
   flex-shrink: 0;
+  transform: skewX(-6deg);
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .project-site-link:hover {
-  background: var(--blue-100);
+  border-color: var(--hover);
+  box-shadow: var(--glow-hover);
 }
 
 .project-site-icon {
-  width: 1.35rem;
-  height: 1.35rem;
+  width: 1.2rem;
+  height: 1.2rem;
   display: block;
+  filter: var(--icon-light);
 }
 
 .project-links {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.5rem;
 }
 
 .project-preview-btn {
@@ -344,6 +510,9 @@ h3 {
   -webkit-width: fit-content;
   overflow: hidden;
   cursor: pointer;
+  /* above the counter-slanted text beside it */
+  position: relative;
+  z-index: 1;
 }
 
 .project-image {
@@ -352,13 +521,15 @@ h3 {
   height: auto;
   max-height: 150px;
   object-fit: cover;
-  border-radius: 10px;
-  border: 1px solid var(--blue-300);
+  border-radius: 0;
+  border: 2px solid var(--border);
   display: block;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .project-preview-btn:hover .project-image {
-  border-color: var(--blue-700);
+  border-color: var(--hover);
+  box-shadow: var(--glow-hover);
 }
 
 .project-skill-list {
@@ -371,18 +542,24 @@ h3 {
 }
 
 .project-skill-list li {
-  background: var(--blue-50);
-  border: 1px solid var(--blue-300);
-  border-radius: 999px;
-  padding: 0.35rem 0.7rem;
-  font-size: 0.85rem;
+  background: transparent;
+  border: 1px solid var(--blue);
+  color: var(--blue);
+  border-radius: 0;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  font-style: italic;
+  font-weight: 700;
+  transform: skewX(-6deg);
+  box-shadow: 0 0 8px rgba(30, 200, 255, 0.4);
+  text-shadow: 0 0 6px rgba(30, 200, 255, 0.6);
 }
 
 .image-lightbox {
   position: fixed;
   inset: 0;
   z-index: 1200;
-  background: rgba(29, 43, 59, 0.78);
+  background: rgba(7, 7, 13, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -398,24 +575,32 @@ h3 {
   max-height: 86vh;
   width: auto;
   height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
+  border-radius: 0;
+  border: 3px solid var(--purple);
+  background: var(--bg);
+  box-shadow: 8px 8px 0 var(--green);
 }
 
 .image-lightbox-close {
   position: absolute;
   top: 1rem;
   right: 1rem;
-  width: 2.3rem;
-  height: 2.3rem;
-  border-radius: 999px;
-  border: 1px solid var(--blue-300);
-  background: var(--white);
-  color: var(--blue-700);
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0;
+  border: 0;
+  background: var(--purple);
+  color: #ffffff;
   font-size: 1.3rem;
+  font-weight: 900;
   line-height: 1;
+  transform: skewX(-12deg);
   cursor: pointer;
+}
+
+.image-lightbox-close:hover {
+  background: var(--green);
+  color: var(--on-bright);
 }
 
 .chip-list {
@@ -427,12 +612,18 @@ h3 {
   gap: 0.6rem;
 }
 
+/* skills as slanted plates */
 .chip-list li {
-  background: var(--white);
-  border: 1px solid var(--blue-300);
-  padding: 0.45rem 0.8rem;
-  border-radius: 999px;
-  font-size: 0.92rem;
+  background: var(--bg-raised);
+  border: 2px solid var(--green);
+  color: var(--text-main);
+  padding: 0.35rem 0.85rem;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 700;
+  transform: skewX(-12deg);
+  box-shadow: var(--glow-green);
 }
 
 .contact-list {
@@ -459,6 +650,7 @@ h3 {
   width: 1rem;
   height: 1rem;
   flex-shrink: 0;
+  filter: var(--icon-light);
 }
 
 .contact-list strong {
@@ -471,7 +663,11 @@ h3 {
 }
 
 a {
-  color: var(--blue-700);
+  color: var(--blue);
+}
+
+a:hover {
+  color: var(--green);
 }
 
 @media (max-width: 860px) {
@@ -492,7 +688,8 @@ a {
     height: auto;
     padding: 1rem;
     border-right: none;
-    border-bottom: 1px solid var(--blue-300);
+    border-bottom: 5px solid;
+    border-image: var(--racing-stripe) 1;
   }
 
   .sidebar-header {
@@ -523,11 +720,12 @@ a {
   }
 
   .brand h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .brand p {
-    font-size: 0.92rem;
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
   }
 
   .lang-code {
@@ -557,7 +755,7 @@ a {
 
   .about-profile-photo-wrap {
     display: block;
-    margin: 0 0 0.9rem;
+    margin: 0 0 1.1rem 0.5rem;
   }
 
   .about-profile-photo {
@@ -598,5 +796,19 @@ a {
   .project-image {
     width: 100%;
     max-height: 220px;
+  }
+
+  /* project cards are too tall here to slant without clipping their text */
+  .project-card,
+  .project-card > * {
+    transform: none;
+  }
+
+  .project-card {
+    margin-inline: 0;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
   }
 }
