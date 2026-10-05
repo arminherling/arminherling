@@ -76,6 +76,8 @@ body::before {
 .sidebar {
   position: sticky;
   top: 0;
+  /* the fixed language switch inside stacks with the sidebar, keep both above the content */
+  z-index: 1100;
   align-self: start;
   height: 100vh;
   padding: 2rem 1.5rem;
